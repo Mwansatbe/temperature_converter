@@ -5,17 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temperature Converter</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <div class="header">
       <h1 class="title">Temperature Converter</h1>
     </div>
     <div class="container">
-      <input type="text" name="kelvin temperature value" id="temp-value" />
-      <input type="button" value="Kelvin" />
-      <input type="button" value="celsius" />
-      <input type="button" value="newton" />
-      <input type="button" value="fahrenheit" />
+      <!-- Kelvin input field -->
+      <div id="lable">
+        <label for="temp-value">Kelvin</label>
+        <input type="text" name="kelvin temperature value" id="temp-value" />
+      </div>
+      <!-- Celsius input value -->
+      <div id="lable">
+        <label for="temp-value">Celsius</label>
+        <input type="text" name="celsius" id="temp-value" />
+      </div>
+      <!-- Newton -->
+      <div id="lable">
+        <label for="temp-value">Newton</label>
+        <input type="text" name="newton" id="netwon" value="" />
+      </div>
+      <!-- Fahrenheit label -->
+      <div id="lable">
+        <label for="temp-value">Fahrenheit</label>
+        <input type="fahrenheit" name="fahrenheit" id="temp-value" />
+      </div>
     </div>
   </body>
 </html>
