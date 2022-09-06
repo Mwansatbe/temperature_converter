@@ -32,6 +32,7 @@ const celsiusInput = document.querySelector('#celsius')
 celsiusInput.addEventListener('input', celsius)
 
 const newtonInput = document.querySelector('#newton')
+newtonInput.addEventListener('input', newton)
 
 const fahrenheitInput = document.querySelector('#fahrenheit')
 fahrenheitInput.addEventListener('input', fahrenheit)
@@ -69,9 +70,13 @@ function fahrenheit() {
   newtonInput.setAttribute('value', Math.round(newton * 1000) / 1000)
 }
 
-// function newton(temperature) {
-//   let newton = temperature
-//   let celsius = (100 / 33) * temperature
-//   let kelvin = temperature * (100 / 33) + 273
-//   let fahrenheit = temperature * (60 / 11) + 32
-// }
+function newton() {
+  temperature = newtonInput.value
+  let newton = temperature
+  let celsius = (100 / 33) * temperature
+  celsiusInput.setAttribute('value', Math.round(celsius * 1000) / 1000)
+  let kelvin = temperature * (100 / 33) + 273
+  kelvinTemp.setAttribute('value', Math.round(kelvin * 1000) / 1000)
+  let fahrenheit = temperature * (60 / 11) + 32
+  fahrenheitInput.setAttribute('value', Math.round(fahrenheit * 1000) / 1000)
+}
