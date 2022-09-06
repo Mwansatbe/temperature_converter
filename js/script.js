@@ -28,29 +28,31 @@ function convertTemperature() {
 const kelvinTemp = document.querySelector('#kelvin')
 kelvinTemp.addEventListener('input', kelvin)
 
-// function getKelvinValue() {}
-
-// console.log(kelvinTemp.addEventListener('oninput', getKelvinValue))
-
 const celsiusInput = document.querySelector('#celsius')
+celsiusInput.addEventListener('input', celsius)
+
 const newtonInput = document.querySelector('#newton')
 const fahrenheitInput = document.querySelector('#fahrenheit')
 
-// function celsius() {
-//   let celsius = temperature
-//   let kelvin = celsius + 273
-//   let fahrenheit = celsius * (9 / 5) + 32
-//   let newton = celsius * (33 / 100)
-// }
+function celsius() {
+  let temperature = parseInt(celsiusInput.value)
+  let celsius = temperature
+  let kelvin = celsius + 273.15
+  kelvinTemp.setAttribute('value', Math.round(kelvin * 1000) / 1000)
+  let fahrenheit = 1.8 * celsius + 32
+  fahrenheitInput.setAttribute('value', fahrenheit)
+  let newton = celsius * (33 / 100)
+  newtonInput.setAttribute('value', Math.round(newton * 1000) / 1000)
+}
 
 function kelvin() {
   let temperature = parseInt(kelvinTemp.value)
   let kelvin = temperature
   let celsius = kelvin - 273.15
-  celsiusInput.setAttribute('value', Math.round(celsius* 1000)/1000);
-  let fahrenheit = 1.8*(kelvin- 273.15) + 32;
-  fahrenheitInput.setAttribute('value', Math.round(fahrenheit *1000)/1000);
-  let newton = (kelvin-273.15)* (33 / 100)
+  celsiusInput.setAttribute('value', Math.round(celsius * 1000) / 1000)
+  let fahrenheit = 1.8 * (kelvin - 273.15) + 32
+  fahrenheitInput.setAttribute('value', Math.round(fahrenheit * 1000) / 1000)
+  let newton = (kelvin - 273.15) * (33 / 100)
   newtonInput.setAttribute('value', Math.round(newton * 1000) / 1000)
 }
 
