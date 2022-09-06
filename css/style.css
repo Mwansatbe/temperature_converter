@@ -12,16 +12,16 @@ html {
 }
 
 body {
-  width: 1100px;
   min-height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: black;
 }
 .header {
-  margin: 20px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 300px;
 }
 
 div#lable {
@@ -57,4 +58,11 @@ input {
   border: 1px solid gray;
   border-radius: 5px;
   text-align: center;
+}
+
+.header,
+.container,
+.footer {
+  display: flex;
+  flex: 50%;
 }
