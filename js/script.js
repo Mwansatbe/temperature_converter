@@ -41,7 +41,7 @@ function celsius() {
   let temperature = parseInt(celsiusInput.value)
   let celsius = temperature
   let kelvin = celsius + 273.15
-  kelvinTemp.value = Math.round(kelvin * 1000) / 1000
+  kelvinTemp.value = Math.round(kelvin * 1000) / 100
   let fahrenheit = 1.8 * celsius + 32
   fahrenheitInput.value = Math.round(fahrenheit * 1000) / 1000
   let newton = celsius * (33 / 100)
