@@ -1,30 +1,3 @@
-// create function to process conversions
-
-function convertTemperature() {
-  userInput = parseInt(prompt('enter a value'))
-  //The kelvin temp should not change
-  const kelvin = userInput
-  console.log(`You entered ${userInput} kelvin. See conversions below`)
-
-  // kelvin-celsius temperature relationship
-  let celsius = kelvin - 273
-
-  // Celsius-fahrenheit relationship
-  let fahrenheit = celsius * (9 / 5) + 32
-
-  // round down
-  fahrenheit = Math.floor(fahrenheit)
-
-  // Newton-celsius temperature relationship
-  let newton = celsius * (33 / 100)
-  // round down
-  newton = Math.floor(newton)
-  console.log(`The temperature is ${celsius} degrees celsius`)
-
-  console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`)
-  console.log(`The temperature is ${newton} degrees newton.`)
-}
-
 const kelvinTemp = document.querySelector('#kelvin')
 kelvinTemp.addEventListener('input', kelvin)
 
@@ -36,7 +9,7 @@ newtonInput.addEventListener('input', newton)
 
 const fahrenheitInput = document.querySelector('#fahrenheit')
 fahrenheitInput.addEventListener('input', fahrenheit)
-
+// Conversation function from celsius
 function celsius() {
   let temperature = parseInt(celsiusInput.value)
   let celsius = temperature
@@ -47,7 +20,7 @@ function celsius() {
   let newton = celsius * (33 / 100)
   newtonInput.value = Math.round(newton * 1000) / 1000
 }
-
+// conversion function from Kelvin
 function kelvin() {
   let temperature = parseInt(kelvinTemp.value)
   let kelvin = temperature
@@ -59,6 +32,7 @@ function kelvin() {
   newtonInput.value = Math.round(newton * 1000) / 1000
 }
 
+// conversation function from fahrenheit
 function fahrenheit() {
   let temperature = parseInt(fahrenheitInput.value)
   let fahrenheit = temperature
@@ -70,6 +44,7 @@ function fahrenheit() {
   newtonInput.value = Math.round(newton * 1000) / 1000
 }
 
+// Conversation function from newton
 function newton() {
   temperature = newtonInput.value
   let newton = temperature
