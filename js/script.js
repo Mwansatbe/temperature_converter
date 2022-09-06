@@ -25,30 +25,45 @@ function convertTemperature() {
   console.log(`The temperature is ${newton} degrees newton.`)
 }
 
-function celsius(temperature) {
-  let celsius = temperature
-  let kelvin = celsius + 273
-  let fahrenheit = celsius * (9 / 5) + 32
-  let newton = celsius * (33 / 100)
-}
+const kelvinTemp = document.querySelector('#kelvin')
+kelvinTemp.addEventListener('input', kelvin)
 
-function kelvin(temperature) {
+// function getKelvinValue() {}
+
+// console.log(kelvinTemp.addEventListener('oninput', getKelvinValue))
+
+const celsiusInput = document.querySelector('#celsius')
+const newtonInput = document.querySelector('#newton')
+const fahrenheitInput = document.querySelector('#fahrenheit')
+
+// function celsius() {
+//   let celsius = temperature
+//   let kelvin = celsius + 273
+//   let fahrenheit = celsius * (9 / 5) + 32
+//   let newton = celsius * (33 / 100)
+// }
+
+function kelvin() {
+  let temperature = parseInt(kelvinTemp.value)
   let kelvin = temperature
-  let celsius = kelvin - 273
-  let fahrenheit = 1.8 * (kelvin - 273) + 32
-  let newton = kelvin / (33 / 100)
+  let celsius = kelvin - 273.15
+  celsiusInput.setAttribute('value', Math.round(celsius* 1000)/1000);
+  let fahrenheit = 1.8*(kelvin- 273.15) + 32;
+  fahrenheitInput.setAttribute('value', Math.round(fahrenheit *1000)/1000);
+  let newton = (kelvin-273.15)* (33 / 100)
+  newtonInput.setAttribute('value', Math.round(newton * 1000) / 1000)
 }
 
-function fahrenheit(temperature) {
-  let fahrenheit = temperature
-  let celsius = (fahrenheit - 32) / 1.8
-  let kelvin = (f - 32) * 1.8 + 273
-  let newton = (fahrenheit - 32) * (11 / 60)
-}
+// function fahrenheit(temperature) {
+//   let fahrenheit = temperature
+//   let celsius = (fahrenheit - 32) / 1.8
+//   let kelvin = (f - 32) * 1.8 + 273
+//   let newton = (fahrenheit - 32) * (11 / 60)
+// }
 
-function newton(temperature) {
-  let newton = temperature
-  let celsius = (100 / 33) * temperature
-  let kelvin = temperature * (100 / 33) + 273
-  let fahrenheit = temperature * (60 / 11) + 32
-}
+// function newton(temperature) {
+//   let newton = temperature
+//   let celsius = (100 / 33) * temperature
+//   let kelvin = temperature * (100 / 33) + 273
+//   let fahrenheit = temperature * (60 / 11) + 32
+// }
